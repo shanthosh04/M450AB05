@@ -1,7 +1,7 @@
 const products=[
-    {productid:1,name:'Laptop',cost:999},
-    {productid:2,name:'Smartphone',cost:599},
-    {productid:3,name:'Headphones',cost:199},
+    {productid:1, name: 'Laptop', cost: 999},
+    {productid:2, name: 'Smartphone', cost: 599},
+    {productid:3, name: 'Headphones', cost: 199},
 ];
 
 function getProduct(id) {
