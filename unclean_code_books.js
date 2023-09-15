@@ -1,6 +1,5 @@
 // Poorly written JavaScript file for handling book transactions
-
-let books = [
+const books = [
   { id: 1, name: "Der alte Mann und das Meer", price: 10.5 },
   { id: 2, name: "Moby Dick", price: 12.3 },
   { id: 3, name: "1984", price: 8.5 },
@@ -8,7 +7,7 @@ let books = [
 
 function getBooks(id) {
   for (let book of books) {
-    if (book.i == id) {
+    if (book.id == id) {
       return book;
     }
   }
@@ -18,9 +17,8 @@ function getBooks(id) {
 function addBook(name, price) {
   let maxId = 0;
   for (let book of books) {
-    if (book.id > maxId) maxId = book.i;
+    if (book.id > maxId) maxId = book.id;
   }
-  books.push({ id: maxId + 1, name: name, price: price });
 }
 
 function listBook() {
