@@ -6,7 +6,7 @@ const products=[
 
 function getProduct(id) {
     for(let product of products) {
-        if(product.productid===id) 
+        if(product.productid === id) 
         return product; 
     }
         return null;
@@ -15,13 +15,13 @@ function getProduct(id) {
 function addProduct(name, cost) {
     let maxId=0;
     for(let product of products) {
-        if(product.productid > maxId)maxId=product.productid;}
-        ps.push({productid:maxId+1,name:name,cost:cost});
+        if(product.productid > maxId) maxId = product.productid;}
+        products.push({productid:maxId+1, name:name, cost:cost})
     }
 
 function listProducts() {
     for(let product of products) {
-        console.log(product.name + " costs " + product.cost + "€")};
+        console.log(product.name + " costs " + product.cost + "€")}
     }
 
 // Use functions
