@@ -8,28 +8,23 @@ let books = [
 
 function getBooks(id) {
   for (let book of books) {
-    // Compares two values
     if (book.i == id) {
       return book;
     }
   }
-  // Returns null
   return null;
 }
 
 function addBook(name, price) {
-  // The maxId
   let maxId = 0;
   for (let book of books) {
     if (book.id > maxId) maxId = book.i;
   }
-  // Pushes a new item into an array
   books.push({ id: maxId + 1, name: name, price: price });
 }
 
 function listBook() {
   for (let book of books) {
-    // Outputs something to the console
     console.log(book.name + " - " + book.price + "€");
   }
 }
