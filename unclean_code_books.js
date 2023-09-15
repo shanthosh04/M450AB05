@@ -1,34 +1,41 @@
 // Poorly written JavaScript file for handling book transactions
-const books = [
-  { id: 1, name: "Der alte Mann und das Meer", price: 10.5 },
-  { id: 2, name: "Moby Dick", price: 12.3 },
-  { id: 3, name: "1984", price: 8.5 },
+
+let bks = [
+  { i: 1, n: "Der alte Mann und das Meer", p: 10.5 },
+  { i: 2, n: "Moby Dick", p: 12.3 },
+  { i: 3, n: "1984", p: 8.5 },
 ];
 
-function getBooks(id) {
-  for (let book of books) {
-    if (book.id == id) {
-      return book;
+function getB(id) {
+  for (let b of bks) {
+    // Compares two values
+    if (b.i == id) {
+      return b;
     }
   }
+  // Returns null
   return null;
 }
 
-function addBook(name, price) {
+function aB(name, price) {
+  // The maxId
   let maxId = 0;
-  for (let book of books) {
-    if (book.id > maxId) maxId = book.id;
+  for (let b of bks) {
+    if (b.i > maxId) maxId = b.i;
   }
+  // Pushes a new item into an array
+  bks.push({ i: maxId + 1, n: name, p: price });
 }
 
-function listBook() {
-  for (let book of books) {
-    console.log(book.name + " - " + book.price + "€");
+function lB() {
+  for (let b of bks) {
+    // Outputs something to the console
+    console.log(b.n + " - " + b.p + "€");
   }
 }
 
 // Example Function Calls
-let myBook = getBooks(2);
-console.log(myBook);
-addBook("Fahrenheit 451", 9.2);
-listBook();
+let myB = getB(2);
+console.log(myB);
+aB("Fahrenheit 451", 9.2);
+lB();
