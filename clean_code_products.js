@@ -19,7 +19,7 @@ function addProduct(name, cost) {
         products.push({productid:maxId+1, name:name, cost:cost})
     }
 
-function listProducts() {
+function logProducts() {
     for(let product of products) {
         console.log(product.name + " costs " + product.cost + "€")}
     }
