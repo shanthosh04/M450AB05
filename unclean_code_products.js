@@ -1,12 +1,12 @@
 let products=[
-    {productd:1,name:'Laptop',cost:999},
+    {productid:1,name:'Laptop',cost:999},
     {productid:2,name:'Smartphone',cost:599},
     {productid:3,name:'Headphones',cost:199},
 ];
 
 function getProduct(id) {
     for(let product of products) {
-        if(product.productid==id) return product; }
+        if(product.productid===id) return product; }
         return null;
     }
 
@@ -17,7 +17,13 @@ function addProduct(name, cost) {
         ps.push({productid:maxId+1,name:name,cost:cost});
     }
 
-function listProducts() {for(let product of products) {console.log(product.name + " costs " + product.cost + "€")};}
+function listProducts() {
+    for(let product of products) {
+        console.log(product.name + " costs " + product.cost + "€")};
+    }
 
 // Use functions
-let person1=getProduct(2);console.log(p1);addProduct("Tablet",399);listProducts();
+let person1 = getProduct(2);
+console.log(person1);
+addProduct("Tablet",399);
+listProducts();
