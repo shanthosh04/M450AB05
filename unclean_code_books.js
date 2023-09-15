@@ -1,41 +1,41 @@
 // Poorly written JavaScript file for handling book transactions
 
-let bks = [
-  { i: 1, n: "Der alte Mann und das Meer", p: 10.5 },
-  { i: 2, n: "Moby Dick", p: 12.3 },
-  { i: 3, n: "1984", p: 8.5 },
+let books = [
+  { id: 1, name: "Der alte Mann und das Meer", price: 10.5 },
+  { id: 2, name: "Moby Dick", price: 12.3 },
+  { id: 3, name: "1984", price: 8.5 },
 ];
 
-function getB(id) {
-  for (let b of bks) {
+function getBooks(id) {
+  for (let book of books) {
     // Compares two values
-    if (b.i == id) {
-      return b;
+    if (book.i == id) {
+      return book;
     }
   }
   // Returns null
   return null;
 }
 
-function aB(name, price) {
+function addBook(name, price) {
   // The maxId
   let maxId = 0;
-  for (let b of bks) {
-    if (b.i > maxId) maxId = b.i;
+  for (let book of books) {
+    if (book.id > maxId) maxId = book.i;
   }
   // Pushes a new item into an array
-  bks.push({ i: maxId + 1, n: name, p: price });
+  books.push({ id: maxId + 1, name: name, price: price });
 }
 
-function lB() {
-  for (let b of bks) {
+function listBook() {
+  for (let book of books) {
     // Outputs something to the console
-    console.log(b.n + " - " + b.p + "€");
+    console.log(book.name + " - " + book.price + "€");
   }
 }
 
 // Example Function Calls
-let myB = getB(2);
-console.log(myB);
-aB("Fahrenheit 451", 9.2);
-lB();
+let myBook = getBooks(2);
+console.log(myBook);
+addBook("Fahrenheit 451", 9.2);
+listBook();
